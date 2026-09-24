@@ -15,7 +15,16 @@ Na półce stoi kilka prawie identycznych wersji każdego produktu, a różnią 
   (np. 詰め替え/つめかえ用 to wkład, a nie produkt z butelką).
 - Ograniczenia: budżet w jenach, bateria i zegar do zamknięcia sklepu. Tax-free powyżej ¥5 000.
 
-Poziomy: 池袋 Matsukiyo → 渋谷 Donki → 京都 sklep z herbatą (matcha). Osaka, Nagano i Shinjuku są na mapie jako „wkrótce”.
+Poziomy (odblokowują się po kolei):
+
+| Stacja | Sklep | Temat |
+|---|---|---|
+| 池袋 Ikebukuro | Matsukiyo | Sana, Quality 1st, Deoco, Curél |
+| 渋谷 Shibuya | Don Quijote | maseczki, kolagen Meiji, Gatsby, Pelican |
+| 京都 Kioto | sklep z herbatą | matcha – rozpoznawanie po kanji |
+| 大阪 Osaka | drogeria w Shinsaibashi | apteczka: leki, komary, upał |
+| 長野 Nagano | drogeria przy dworcu | włosy: szampon vs odżywka vs olejek |
+| 新宿 Shinjuku | wielka drogeria (finał) | Astalift, Elixir, Prior, serum VC, puder, kolagen |
 
 ## Uruchomienie
 
@@ -37,7 +46,7 @@ Build tworzy jeden samodzielny plik `dist/index.html` (JS, CSS i zdjęcia w śro
 ## Personalizacja
 
 - `src/config.ts`: imię gracza, tekst na zakończenie, koszt skanu.
-- `src/data/levels.ts`: poziomy, produkty, pułapki i wyjaśnienia.
+- `src/data/levels.ts`, `src/data/levels2.ts`: poziomy, produkty, pułapki i wyjaśnienia.
 - `src/data/vocab.ts`: słownik (klucz = tekst w `[nawiasach]` na etykietach).
 - `src/img/`: screeny z listy (zmniejszone do ~520 px). Przy buildzie są wbudowywane w `index.html`.
 

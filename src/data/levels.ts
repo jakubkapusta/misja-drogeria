@@ -1,18 +1,6 @@
-import type { Level, Look, Product } from '../types'
-
-// screeny są importowane → przy buildzie trafiają (jako base64) do jednego index.html
-const PHOTOS = import.meta.glob<string>('../img/*.jpg', { eager: true, import: 'default' })
-const img = (id: string) => {
-  const url = PHOTOS[`../img/${id}.jpg`]
-  if (!url) throw new Error(`Brak zdjęcia: ${id}`)
-  return url
-}
-
-function p(id: string, look: Look, label: string[], tl: string, price: number, why?: string): Product {
-  return { id, look, label, tl, price, why }
-}
-
-const FILLER_WHY = 'Tego nie było na liście. Ładne, ale portfel płacze 😅'
+import type { Level, Look } from '../types'
+import { FILLER_WHY, img, p } from './helpers'
+import { osaka, nagano, shinjuku } from './levels2'
 
 /* ─────────────────────────── 1. Matsukiyo Ikebukuro ─────────────────────────── */
 
@@ -334,8 +322,8 @@ const kyoto: Level = {
   storeJp: '宇治 茶舗',
   theme: 'kyoto',
   intro: [
-    'Kioto, ostatni dzień. Mały sklep z herbatą, pachnie prażoną ほうじ茶.',
-    'Bateria: 20%. To wystarczy na dwa skany…',
+    'Kioto. Mały sklep z herbatą, pachnie prażoną ほうじ茶.',
+    'Bateria: 20% – cały dzień zdjęć w świątyniach. To wystarczy na dwa skany…',
     'Puszki matchy różnią się tylko kanji. Porównuj znaki ze screenem – albo z notesem!',
   ],
   greeting: 'おこしやす〜',
@@ -431,11 +419,9 @@ const kyoto: Level = {
   ],
 }
 
-export const LEVELS: Level[] = [matsukiyo, donki, kyoto]
+export const LEVELS: Level[] = [matsukiyo, donki, kyoto, osaka, nagano, shinjuku]
 
 /** Przystanki „wkrótce” na mapie */
 export const SOON = [
-  { station: '大阪', romaji: 'Ōsaka' },
-  { station: '長野', romaji: 'Nagano' },
-  { station: '新宿', romaji: 'Shinjuku' },
+  { station: '次の旅', romaji: 'Tsugi no tabi · następna podróż?' },
 ]

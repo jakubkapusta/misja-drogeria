@@ -1,6 +1,6 @@
 export type Shape =
   | 'tube' | 'pump' | 'spray' | 'bottle' | 'pouch' | 'box'
-  | 'jar' | 'stick' | 'tin' | 'pack' | 'soap' | 'refill' | 'bag'
+  | 'jar' | 'stick' | 'tin' | 'pack' | 'soap' | 'refill' | 'bag' | 'dropper'
 
 export interface Look {
   shape: Shape
@@ -50,7 +50,7 @@ export interface Level {
   city: string
   store: string
   storeJp: string
-  theme: 'matsukiyo' | 'donki' | 'kyoto'
+  theme: 'matsukiyo' | 'donki' | 'kyoto' | 'osaka' | 'nagano' | 'shinjuku'
   intro: string[]
   greeting: string
   budget: number

@@ -368,3 +368,24 @@ button.station:not(:disabled):hover { border-color: #80c241; }
   position: fixed; bottom: 0; left: 0; right: 0; padding: 12px 16px max(14px, env(safe-area-inset-bottom));
   background: linear-gradient(transparent, var(--bg) 35%); margin: 0;
 }
+
+.theme-osaka {
+  --wall: #fff0e6; --sign-bg: #ff6a00; --sign-ink: #fff; --shelf: #fff7ef; --shelf-edge: #c2410c;
+  --hud: #c2410c; --hud-ink: #fff; --tag: #fff3b0; --accent: #c2410c;
+}
+.theme-osaka .aisle-sign { border: 3px solid #1a1a1a; box-shadow: 4px 4px 0 #1a1a1a; }
+.theme-nagano {
+  --wall: #eef4f8; --sign-bg: #2b4c7e; --sign-ink: #fff; --shelf: #eadcc4; --shelf-edge: #b89c72;
+  --hud: #2b4c7e; --hud-ink: #fff; --tag: #ffffff; --accent: #2b4c7e;
+}
+.theme-nagano .tag { border: 1px solid #2b4c7e; }
+.theme-shinjuku {
+  --wall: #1b1030; --sign-bg: #1b1030; --sign-ink: #7af0ff; --shelf: #f3eefc; --shelf-edge: #b026ff;
+  --hud: #1b1030; --hud-ink: #ff7ad9; --tag: #ffffff; --accent: #b026ff;
+}
+.theme-shinjuku .aisle-sign {
+  border: 2px solid #ff7ad9; text-shadow: 0 0 6px #7af0ff, 0 0 14px #7af0ff;
+  box-shadow: 0 0 12px rgba(255, 122, 217, .6), inset 0 0 12px rgba(255, 122, 217, .35);
+}
+.theme-shinjuku .aisle-tabs { background: #1b1030; }
+.theme-shinjuku .tag { border: 1px solid #b026ff; }

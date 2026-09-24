@@ -5,7 +5,7 @@ export const PLAYER = 'Asia'
 export const ENDING = [
   'Wszystkie zakupy zrobione! 🎌',
   'Walizka waży o 6 kg więcej niż przy wylocie, a łazienka w domu właśnie zamieniła się w filię Matsukiyo.',
-  'Dzięki, że zabrałaś mnie na te wszystkie łowy. Następnym razem Osaka? 😉',
+  'Dzięki, że zabrałaś mnie na te wszystkie łowy. Następnym razem Hokkaido? 😉',
 ]
 
 export const SCAN_COST = 10

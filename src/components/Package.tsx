@@ -80,7 +80,7 @@ function Body({ look }: { look: Look }): { el: ReactElement; area: Area } {
       }
     case 'box':
       return {
-        area: { x: 20, y: 32, w: 56, h: 100 },
+        area: { x: 20, y: 32, w: 56, h: 92 },
         el: <>
           <path d="M16 26 L24 19 L88 19 L80 26 Z" fill={shade(body, 0.08)} stroke={edge} strokeWidth=".8" />
           <path d="M80 26 L88 19 L88 131 L80 138 Z" fill={shade(body, -0.15)} stroke={edge} strokeWidth=".8" />
@@ -90,10 +90,21 @@ function Body({ look }: { look: Look }): { el: ReactElement; area: Area } {
       }
     case 'jar':
       return {
-        area: { x: 20, y: 92, w: 60, h: 40 },
+        area: { x: 18, y: 80, w: 64, h: 52 },
         el: <>
-          <rect x="16" y="70" width="68" height="20" rx="4" fill={accent} />
-          <rect x="18" y="88" width="64" height="50" rx="8" fill={body} stroke={edge} strokeWidth="1" />
+          <rect x="14" y="54" width="72" height="22" rx="5" fill={accent} stroke={shade(accent, -0.2)} strokeWidth=".8" />
+          <rect x="12" y="74" width="76" height="64" rx="12" fill={body} stroke={edge} strokeWidth="1" />
+        </>,
+      }
+    case 'dropper':
+      // body = kolor etykiety, accent = gumka pipety; szkło zawsze bursztynowe
+      return {
+        area: { x: 30, y: 72, w: 40, h: 60 },
+        el: <>
+          <rect x="42" y="8" width="16" height="30" rx="8" fill={accent} />
+          <rect x="36" y="34" width="28" height="20" rx="2" fill="#f3f3f3" stroke="#d0d0d0" strokeWidth=".8" />
+          <rect x="24" y="52" width="52" height="86" rx="10" fill="#8a4b12" stroke="#5e300a" strokeWidth="1" />
+          <rect x="27" y="66" width="46" height="70" rx="3" fill={body} />
         </>,
       }
     case 'stick':
@@ -168,7 +179,7 @@ export function Package({ look, size = 1, className }: { look: Look; size?: numb
     <svg viewBox="0 0 100 140" width={70 * size} height={98 * size} className={className} aria-hidden>
       <ellipse cx="50" cy="138" rx="38" ry="3" fill="rgba(0,0,0,.18)" />
       {el}
-      {stripe && <rect x={area.x - 2} y={area.y + area.h - 3} width={area.w + 4} height="3" fill={stripe} opacity=".85" />}
+      {stripe && <rect x={area.x - 2} y={inner.y + inner.h} width={area.w + 4} height="3" fill={stripe} opacity=".85" />}
       {brand && <text x={area.x + area.w / 2} y={area.y + brandSize} fontSize={brandSize} fill={ink} opacity=".85"
         fontFamily={FONT} fontWeight={700} textAnchor="middle" letterSpacing=".3">{brand}</text>}
       <BigText text={big} area={inner} vert={vert} ink={ink} />
